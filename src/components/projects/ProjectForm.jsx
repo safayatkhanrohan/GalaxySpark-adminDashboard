@@ -175,7 +175,7 @@ export const ProjectForm = () => {
                     id="status"
                     className="form-select"
                     {...register("status", { required: "Status is required" })}
-                  >
+                  > 
                     <option value="">Select Status</option>
                     <option value="Pending">Pending</option>
                     <option value="Ongoing">Ongoing</option>
