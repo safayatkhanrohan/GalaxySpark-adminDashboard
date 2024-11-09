@@ -1,11 +1,13 @@
+import { Link } from "react-router-dom";
+
 const SidebarHeader = () => {
   return (
     <div className="sidebar-header">
       <div className="logo">
-        <a href="./index.html">
+        <Link to="/">
           <ion-icon name="apps-outline"></ion-icon>
           <span className="logo-text">GalaxySpark</span>
-        </a>
+        </Link>
       </div>
     </div>
   );

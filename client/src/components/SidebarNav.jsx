@@ -45,16 +45,16 @@ const SidebarNav = () => {
             </Link>
             <ul className="inner-drop">
               <li>
-                <Link to="#">Home</Link>
+                <Link to="/pages/home">Home</Link>
               </li>
               <li>
-                <Link to="#">About</Link>
+                <Link to="/pages/about">About</Link>
               </li>
               <li>
-                <Link to="#">Services</Link>
+                <Link to="/pages/services">Services</Link>
               </li>
               <li>
-                <Link to="#">Contact</Link>
+                <Link to="/pages/contact">Contact</Link>
               </li>
             </ul>
           </li>
@@ -132,7 +132,7 @@ const SidebarNav = () => {
                 <Link to="#">All Projects</Link>
               </li>
               <li>
-                <Link to="#">+ New Project</Link>
+                <Link to="/projects/create">+ New Project</Link>
               </li>
             </ul>
           </li>
