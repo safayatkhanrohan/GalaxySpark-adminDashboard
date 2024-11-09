@@ -11,6 +11,11 @@
   text-decoration: none !important;
 }
 
+ul li {
+  padding: 0;
+  list-style: none;
+}
+
 body,
 #root {
   background-color: $dashboard-bg;

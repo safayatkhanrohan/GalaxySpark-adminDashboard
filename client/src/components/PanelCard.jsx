@@ -15,7 +15,7 @@ const PanelCard = ({ amount, label, colorClass, iconName, link, linkText }) => (
           </div>
         </div>
       </div>
-      <div className={`panel-footer bg-primary`}>
+      <div className={`panel-footer ${colorClass}`}>
         <Link to={link} className="text-white float-end fs-sm">
           {linkText}
         </Link>

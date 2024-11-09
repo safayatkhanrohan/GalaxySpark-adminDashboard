@@ -22,7 +22,7 @@ const Header = ({ sidebarRef }) => {
           <form className="form-search">
             <input
               type="search"
-              placeholder="Search Customer"
+              placeholder="Search Settings"
               className="fs-md"
             />
             <button type="submit">

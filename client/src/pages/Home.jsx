@@ -3,6 +3,7 @@ import { useRef } from "react";
 import Header from "../components/layout/Header"
 import Sidebar from "../components/layout/Sidebar"
 import PanelCard from "../components/PanelCard";
+import ActivityLog from "../components/ActivityLog";
 
 const Home = () => {
   const sidebarRef = useRef(null);
@@ -13,37 +14,43 @@ const Home = () => {
         <Header sidebarRef={sidebarRef} />
         <div className="row g-3 mb-2">
           <PanelCard
-            amount="TK 0"
-            label="Income Today"
+            amount="50"
+            label="Total Projects"
             colorClass="bg-primary"
-            iconName="pricetags-outline"
+            iconName="medkit-outline"
             link="/"
             linkText="View Projects"
           />
           <PanelCard
-            amount="TK 0"
-            label="Income This Month"
+            amount="12"
+            label="Teams Members"
             colorClass="text-success bg-success"
-            iconName="logo-usd"
-            link="/period-report"
-            linkText="View Reports"
+            iconName="people"
+            link="/"
+            linkText="View Teams"
           />
           <PanelCard
-            amount="User 0"
-            label="User Active"
+            amount="11"
+            label="Total Blogs"
             colorClass="text-info bg-info"
-            iconName="person"
-            link="/prepaid-list"
+            iconName="create-outline"
+            link="/"
             linkText="View All"
           />
           <PanelCard
-            amount="Users 0"
-            label="Total Users"
+            amount="7"
+            label="Total Pages"
             colorClass="text-danger bg-danger"
-            iconName="people"
+            iconName="documents-outline"
             link="/"
-            linkText="View reports"
+            linkText="View Pages"
           />
+        </div>
+
+        <div className="row g-3 mb-2">
+          <div className="col-md-6 offset-md-6">
+            <ActivityLog />
+          </div>
         </div>
       </div>
     </div>
