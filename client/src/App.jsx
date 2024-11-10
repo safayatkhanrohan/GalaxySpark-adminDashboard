@@ -5,7 +5,8 @@ import Dashboard from "./pages/Dashboard";
 import HomeSettings from "./pages/HomeSettings";
 import { Toaster } from "react-hot-toast";
 import CreateNewProject from "./pages/CreateNewProject";
-
+import { AllProjects } from "./pages/AllProjects";
+import AddTeamMember from "./pages/AddTeamMember";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -20,8 +21,17 @@ const router = createBrowserRouter([
     element: <HomeSettings />,
   },
   {
+    path: "/projects",
+    element: <AllProjects />,
+  },
+  {
     path: "/projects/create",
     element: <CreateNewProject />,
+  },
+
+  {
+    path: "/team-member/create",
+    element: <AddTeamMember />,
   },
   {
     path: "*",
