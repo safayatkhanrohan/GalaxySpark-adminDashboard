@@ -21,5 +21,21 @@ export const createProject = async (projectData) => {
   }
 };
 
+// Function to homepage creation
+export const createHomepage = async (projectData) => {
+  try {
+    const response = await api.post("/home-page", projectData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error("Error creating project:", error);
+    throw error;
+  }
+};
+
+
 
 export default api;

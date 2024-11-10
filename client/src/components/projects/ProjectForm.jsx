@@ -73,10 +73,7 @@ const ProjectForm = () => {
             <div className="col-xl-8">
               {/* Project Name */}
               <div className="row mb-3">
-                <label
-                  htmlFor="name"
-                  className="col-form-label col-lg-3 end-label"
-                >
+                <label htmlFor="name" className="col-form-label col-lg-3 ">
                   Project Name <span style={{ color: "red" }}>*</span>
                 </label>
                 <div className="col-lg-9">
@@ -100,7 +97,7 @@ const ProjectForm = () => {
               <div className="row mb-3">
                 <label
                   htmlFor="description"
-                  className="col-form-label col-lg-3 end-label"
+                  className="col-form-label col-lg-3 "
                 >
                   Description <span style={{ color: "red" }}>*</span>
                 </label>
@@ -122,10 +119,7 @@ const ProjectForm = () => {
 
               {/* Client */}
               <div className="row mb-3">
-                <label
-                  htmlFor="client"
-                  className="col-form-label col-lg-3 end-label"
-                >
+                <label htmlFor="client" className="col-form-label col-lg-3 ">
                   Client
                 </label>
                 <div className="col-lg-9">
@@ -146,7 +140,7 @@ const ProjectForm = () => {
               <div className="row mb-3">
                 <label
                   htmlFor="projectType"
-                  className="col-form-label col-lg-3 end-label"
+                  className="col-form-label col-lg-3 "
                 >
                   Project Type <span style={{ color: "red" }}>*</span>
                 </label>
@@ -175,10 +169,7 @@ const ProjectForm = () => {
 
               {/* Status */}
               <div className="row mb-3">
-                <label
-                  htmlFor="status"
-                  className="col-form-label col-lg-3 end-label"
-                >
+                <label htmlFor="status" className="col-form-label col-lg-3 ">
                   Status <span style={{ color: "red" }}>*</span>
                 </label>
                 <div className="col-lg-9">
@@ -202,10 +193,7 @@ const ProjectForm = () => {
 
               {/* Start Date */}
               <div className="row mb-3">
-                <label
-                  htmlFor="startDate"
-                  className="col-form-label col-lg-3 end-label"
-                >
+                <label htmlFor="startDate" className="col-form-label col-lg-3 ">
                   Start Date
                 </label>
                 <div className="col-lg-9">
@@ -220,10 +208,7 @@ const ProjectForm = () => {
 
               {/* End Date */}
               <div className="row mb-3">
-                <label
-                  htmlFor="endDate"
-                  className="col-form-label col-lg-3 end-label"
-                >
+                <label htmlFor="endDate" className="col-form-label col-lg-3 ">
                   End Date
                 </label>
                 <div className="col-lg-9">
@@ -240,7 +225,7 @@ const ProjectForm = () => {
               <div className="row mb-3">
                 <label
                   htmlFor="projectManager"
-                  className="col-form-label col-lg-3 end-label"
+                  className="col-form-label col-lg-3 "
                 >
                   Project Manager <span style={{ color: "red" }}>*</span>
                 </label>
@@ -264,10 +249,7 @@ const ProjectForm = () => {
 
               {/* Team */}
               <div className="row mb-3">
-                <label
-                  htmlFor="team"
-                  className="col-form-label col-lg-3 end-label"
-                >
+                <label htmlFor="team" className="col-form-label col-lg-3 ">
                   Team Members (comma-separated)
                 </label>
                 <div className="col-lg-9">
@@ -283,10 +265,7 @@ const ProjectForm = () => {
 
               {/* Budget */}
               <div className="row mb-3">
-                <label
-                  htmlFor="budget"
-                  className="col-form-label col-lg-3 end-label"
-                >
+                <label htmlFor="budget" className="col-form-label col-lg-3 ">
                   Budget
                 </label>
                 <div className="col-lg-9">
@@ -303,10 +282,7 @@ const ProjectForm = () => {
 
               {/* Spent */}
               <div className="row mb-3">
-                <label
-                  htmlFor="spent"
-                  className="col-form-label col-lg-3 end-label"
-                >
+                <label htmlFor="spent" className="col-form-label col-lg-3 ">
                   Spent
                 </label>
                 <div className="col-lg-9">
@@ -323,10 +299,7 @@ const ProjectForm = () => {
 
               {/* Technologies */}
               <div className="row mb-3">
-                <label
-                  htmlFor="tech"
-                  className="col-form-label col-lg-3 end-label"
-                >
+                <label htmlFor="tech" className="col-form-label col-lg-3 ">
                   Technologies (comma-separated)
                 </label>
                 <div className="col-lg-9">
@@ -342,10 +315,7 @@ const ProjectForm = () => {
 
               {/* Notes */}
               <div className="row mb-3">
-                <label
-                  htmlFor="notes"
-                  className="col-form-label col-lg-3 end-label"
-                >
+                <label htmlFor="notes" className="col-form-label col-lg-3 ">
                   Notes
                 </label>
                 <div className="col-lg-9">
@@ -361,7 +331,7 @@ const ProjectForm = () => {
               <div className="row mb-3">
                 <label
                   htmlFor="livePreview"
-                  className="col-form-label col-lg-3 end-label"
+                  className="col-form-label col-lg-3 "
                 >
                   Live Preview URL
                 </label>
@@ -388,7 +358,7 @@ const ProjectForm = () => {
               <div className="row mb-3">
                 <label
                   htmlFor="sourceFile"
-                  className="col-form-label col-lg-3 end-label"
+                  className="col-form-label col-lg-3 "
                 >
                   Source File URL
                 </label>
@@ -413,10 +383,7 @@ const ProjectForm = () => {
 
               {/* Is Active */}
               <div className="row mb-3">
-                <label
-                  htmlFor="isActive"
-                  className="col-form-label col-lg-3 end-label"
-                >
+                <label htmlFor="isActive" className="col-form-label col-lg-3 ">
                   Active
                 </label>
                 <div className="col-lg-9">
@@ -430,10 +397,7 @@ const ProjectForm = () => {
 
               {/* Files */}
               <div className="row mb-3">
-                <label
-                  htmlFor="files"
-                  className="col-form-label col-lg-3 end-label"
-                >
+                <label htmlFor="files" className="col-form-label col-lg-3 ">
                   Files
                 </label>
                 <div className="col-lg-9">
@@ -462,4 +426,4 @@ const ProjectForm = () => {
   );
 };
 
-export default ProjectForm
+export default ProjectForm;
