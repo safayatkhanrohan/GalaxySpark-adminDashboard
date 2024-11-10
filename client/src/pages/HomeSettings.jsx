@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react'
 import DashboardLayout from '../components/layout/DashboardLayout'
 import HomePageForm from '../components/HomePage/HomepageForm'
 
