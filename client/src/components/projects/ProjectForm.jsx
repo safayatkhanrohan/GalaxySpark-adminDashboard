@@ -1,9 +1,10 @@
+// eslint-disable-next-line no-unused-vars
 import React from "react";
 import { useForm } from "react-hook-form";
 import { createProject } from "../../api/apiService";
 import toast, { Toaster } from "react-hot-toast";
 
-export const ProjectForm = () => {
+const ProjectForm = () => {
   const {
     register,
     handleSubmit,
@@ -13,19 +14,52 @@ export const ProjectForm = () => {
 
   const onSubmit = async (data) => {
     try {
-      const formattedData = {
-        ...data,
-        startDate: data.startDate || null,
-        endDate: data.endDate || null,
-        files: data.files.length > 0 ? Array.from(data.files) : [],
-        team: data.team.split(",").map((member) => member.trim()),
-        tech: data.tech.split(",").map((tech) => tech.trim()),
-      };
+      // Creating FormData instance
+      const formData = new FormData();
+      formData.append("name", data.name);
+      formData.append("description", data.description);
+      formData.append("client", data.client);
+      formData.append("projectType", data.projectType);
+      formData.append("status", data.status);
+      formData.append("startDate", data.startDate || null);
+      formData.append("endDate", data.endDate || null);
+      formData.append("projectManager", data.projectManager);
+      formData.append("budget", data.budget || 0);
+      formData.append("spent", data.spent || 0);
+      formData.append("livePreview", data.livePreview || "");
+      formData.append("sourceFile", data.sourceFile || "");
+      formData.append("isActive", data.isActive || false);
 
-      await createProject(formattedData);
+      // Adding team members and tech as comma-separated values
+      formData.append(
+        "team",
+        data.team
+          .split(",")
+          .map((member) => member.trim())
+          .join(",")
+      );
+      formData.append(
+        "tech",
+        data.tech
+          .split(",")
+          .map((tech) => tech.trim())
+          .join(",")
+      );
+      formData.append("notes", data.notes || "");
+
+      // Appending files
+      if (data.files.length > 0) {
+        Array.from(data.files).forEach((file) => {
+          formData.append("files", file);
+        });
+      }
+
+      // Making API request with FormData
+      await createProject(formData);
       toast.success("Project created successfully!");
       reset();
     } catch (error) {
+      console.log("Error creating project:", error);
       toast.error("Failed to create project. Please try again.");
     }
   };
@@ -41,7 +75,7 @@ export const ProjectForm = () => {
               <div className="row mb-3">
                 <label
                   htmlFor="name"
-                  className="col-form-label col-lg-3 end-label-lg"
+                  className="col-form-label col-lg-3 end-label"
                 >
                   Project Name <span style={{ color: "red" }}>*</span>
                 </label>
@@ -66,7 +100,7 @@ export const ProjectForm = () => {
               <div className="row mb-3">
                 <label
                   htmlFor="description"
-                  className="col-form-label col-lg-3 end-label-lg"
+                  className="col-form-label col-lg-3 end-label"
                 >
                   Description <span style={{ color: "red" }}>*</span>
                 </label>
@@ -90,7 +124,7 @@ export const ProjectForm = () => {
               <div className="row mb-3">
                 <label
                   htmlFor="client"
-                  className="col-form-label col-lg-3 end-label-lg"
+                  className="col-form-label col-lg-3 end-label"
                 >
                   Client
                 </label>
@@ -112,7 +146,7 @@ export const ProjectForm = () => {
               <div className="row mb-3">
                 <label
                   htmlFor="projectType"
-                  className="col-form-label col-lg-3 end-label-lg"
+                  className="col-form-label col-lg-3 end-label"
                 >
                   Project Type <span style={{ color: "red" }}>*</span>
                 </label>
@@ -143,7 +177,7 @@ export const ProjectForm = () => {
               <div className="row mb-3">
                 <label
                   htmlFor="status"
-                  className="col-form-label col-lg-3 end-label-lg"
+                  className="col-form-label col-lg-3 end-label"
                 >
                   Status <span style={{ color: "red" }}>*</span>
                 </label>
@@ -170,7 +204,7 @@ export const ProjectForm = () => {
               <div className="row mb-3">
                 <label
                   htmlFor="startDate"
-                  className="col-form-label col-lg-3 end-label-lg"
+                  className="col-form-label col-lg-3 end-label"
                 >
                   Start Date
                 </label>
@@ -188,7 +222,7 @@ export const ProjectForm = () => {
               <div className="row mb-3">
                 <label
                   htmlFor="endDate"
-                  className="col-form-label col-lg-3 end-label-lg"
+                  className="col-form-label col-lg-3 end-label"
                 >
                   End Date
                 </label>
@@ -206,7 +240,7 @@ export const ProjectForm = () => {
               <div className="row mb-3">
                 <label
                   htmlFor="projectManager"
-                  className="col-form-label col-lg-3 end-label-lg"
+                  className="col-form-label col-lg-3 end-label"
                 >
                   Project Manager <span style={{ color: "red" }}>*</span>
                 </label>
@@ -232,7 +266,7 @@ export const ProjectForm = () => {
               <div className="row mb-3">
                 <label
                   htmlFor="team"
-                  className="col-form-label col-lg-3 end-label-lg"
+                  className="col-form-label col-lg-3 end-label"
                 >
                   Team Members (comma-separated)
                 </label>
@@ -251,7 +285,7 @@ export const ProjectForm = () => {
               <div className="row mb-3">
                 <label
                   htmlFor="budget"
-                  className="col-form-label col-lg-3 end-label-lg"
+                  className="col-form-label col-lg-3 end-label"
                 >
                   Budget
                 </label>
@@ -271,7 +305,7 @@ export const ProjectForm = () => {
               <div className="row mb-3">
                 <label
                   htmlFor="spent"
-                  className="col-form-label col-lg-3 end-label-lg"
+                  className="col-form-label col-lg-3 end-label"
                 >
                   Spent
                 </label>
@@ -291,7 +325,7 @@ export const ProjectForm = () => {
               <div className="row mb-3">
                 <label
                   htmlFor="tech"
-                  className="col-form-label col-lg-3 end-label-lg"
+                  className="col-form-label col-lg-3 end-label"
                 >
                   Technologies (comma-separated)
                 </label>
@@ -310,7 +344,7 @@ export const ProjectForm = () => {
               <div className="row mb-3">
                 <label
                   htmlFor="notes"
-                  className="col-form-label col-lg-3 end-label-lg"
+                  className="col-form-label col-lg-3 end-label"
                 >
                   Notes
                 </label>
@@ -327,7 +361,7 @@ export const ProjectForm = () => {
               <div className="row mb-3">
                 <label
                   htmlFor="livePreview"
-                  className="col-form-label col-lg-3 end-label-lg"
+                  className="col-form-label col-lg-3 end-label"
                 >
                   Live Preview URL
                 </label>
@@ -354,7 +388,7 @@ export const ProjectForm = () => {
               <div className="row mb-3">
                 <label
                   htmlFor="sourceFile"
-                  className="col-form-label col-lg-3 end-label-lg"
+                  className="col-form-label col-lg-3 end-label"
                 >
                   Source File URL
                 </label>
@@ -381,7 +415,7 @@ export const ProjectForm = () => {
               <div className="row mb-3">
                 <label
                   htmlFor="isActive"
-                  className="col-form-label col-lg-3 end-label-lg"
+                  className="col-form-label col-lg-3 end-label"
                 >
                   Active
                 </label>
@@ -398,7 +432,7 @@ export const ProjectForm = () => {
               <div className="row mb-3">
                 <label
                   htmlFor="files"
-                  className="col-form-label col-lg-3 end-label-lg"
+                  className="col-form-label col-lg-3 end-label"
                 >
                   Files
                 </label>
@@ -427,3 +461,5 @@ export const ProjectForm = () => {
     </div>
   );
 };
+
+export default ProjectForm

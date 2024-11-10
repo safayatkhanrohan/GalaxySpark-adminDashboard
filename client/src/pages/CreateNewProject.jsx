@@ -1,6 +1,5 @@
-import React from 'react'
 import DashboardLayout from '../components/layout/DashboardLayout'
-import { ProjectForm } from '../components/projects/ProjectForm'
+import ProjectForm from '../components/projects/ProjectForm'
 
 const CreateNewProject = () => {
   return (
