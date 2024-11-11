@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import React from "react";
 import { useForm } from "react-hook-form";
 import { createProject } from "../../api/apiService";
@@ -14,44 +13,22 @@ export const ProjectForm = () => {
 
   const onSubmit = async (data) => {
     try {
-      // Creating FormData instance
-      const formData = new FormData();
-      formData.append("name", data.name);
-      formData.append("description", data.description);
-      formData.append("client", data.client);
-      formData.append("projectType", data.projectType);
-      formData.append("status", data.status);
-      formData.append("startDate", data.startDate || null);
-      formData.append("endDate", data.endDate || null);
-      formData.append("projectManager", data.projectManager);
-      formData.append("budget", data.budget || 0);
-      formData.append("spent", data.spent || 0);
-      formData.append("livePreview", data.livePreview || "");
-      formData.append("sourceFile", data.sourceFile || "");
-      formData.append("isActive", data.isActive || false);
+      const formattedData = {
+        ...data,
+        startDate: data.startDate || null,
+        endDate: data.endDate || null,
+        files: data.files.length > 0 ? Array.from(data.files) : [],
+        team: data.team.split(",").map((member) => member.trim()),
+        tech: data.tech.split(",").map((tech) => tech.trim()),
+      };
 
-      // Adding team members and tech as comma-separated values
-      formData.append("team", data.team.split(",").map((member) => member.trim()).join(","));
-      formData.append("tech", data.tech.split(",").map((tech) => tech.trim()).join(","));
-      formData.append("notes", data.notes || "");
-
-      // Appending files
-      if (data.files.length > 0) {
-        Array.from(data.files).forEach((file) => {
-          formData.append("files", file);
-        });
-      }
-
-      // Making API request with FormData
-      await createProject(formData);
+      await createProject(formattedData);
       toast.success("Project created successfully!");
       reset();
     } catch (error) {
-      console.log("Error creating project:", error);
       toast.error("Failed to create project. Please try again.");
     }
   };
-
 
   return (
     <div>
@@ -175,7 +152,7 @@ export const ProjectForm = () => {
                     id="status"
                     className="form-select"
                     {...register("status", { required: "Status is required" })}
-                  > 
+                  >
                     <option value="">Select Status</option>
                     <option value="Pending">Pending</option>
                     <option value="Ongoing">Ongoing</option>
