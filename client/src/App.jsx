@@ -5,6 +5,9 @@ import Dashboard from "./pages/Dashboard";
 import HomeSettings from "./pages/HomeSettings";
 import { Toaster } from "react-hot-toast";
 import CreateNewProject from "./pages/CreateNewProject";
+import { AllProjects } from "./pages/AllProjects";
+import AddTeamMember from "./pages/AddTeamMember";
+import { HelmetProvider } from "react-helmet-async";
 
 const router = createBrowserRouter([
   {
@@ -20,8 +23,17 @@ const router = createBrowserRouter([
     element: <HomeSettings />,
   },
   {
+    path: "/projects",
+    element: <AllProjects />,
+  },
+  {
     path: "/projects/create",
     element: <CreateNewProject />,
+  },
+
+  {
+    path: "/team-member/create",
+    element: <AddTeamMember />,
   },
   {
     path: "*",
@@ -31,10 +43,10 @@ const router = createBrowserRouter([
 
 const App = () => {
       return (
-        <>
+        <HelmetProvider>
           <RouterProvider router={router} />
           <Toaster position="bottom-center" reverseOrder={false} />
-        </>
+        </HelmetProvider>
       );
 };
 

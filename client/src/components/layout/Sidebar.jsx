@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 import ProfileSection from "../ProfileSection";
 import SidebarHeader from "../SidebarHeader";
-import SidebarNav from "../SidebarNav";
+import SidebarNav from "./SidebarNav";
 
 const Sidebar = forwardRef((props, ref) => {
   return (

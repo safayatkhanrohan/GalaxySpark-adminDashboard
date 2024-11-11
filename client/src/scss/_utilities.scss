@@ -26,9 +26,6 @@
   }
 }
 
-
-
-
 .dropdown-item.active,
 .dropdown-item:focus {
   background-color: transparent;
@@ -42,25 +39,24 @@
   background-color: $primary !important;
 }
 
-
 .text-light {
-  color: var(--light-font) !important;
+  color: $light-font !important;
 }
 
 .bg-success {
-  background-color: var(--green) !important;
+  background-color: $green !important;
 }
 
 .bg-info {
-  background-color: var(--skyblue) !important;
+  background-color: $skyblue !important;
 }
 
 .bg-danger {
-  background-color: var(--red) !important;
+  background-color: $red !important;
 }
 
 .text-success {
-  color: var(--green) !important;
+  color: $green !important;
 }
 
 .btn {
@@ -75,64 +71,64 @@
 }
 
 .btn-primary {
-  background-color: var(--primary) !important;
-  border-color: #3e4fb1;
+  background-color: $primary !important;
+  border-color: $btn-primary-border;
 }
 
 .btn-primary:hover {
-  background-color: #32408f !important;
+  background-color: $btn-primary-hover !important;
 }
 
 .btn-outline-primary {
-  border-color: var(--primary) !important;
-  color: var(--primary) !important;
+  border-color: $primary !important;
+  color: $primary !important;
 }
 
 .btn-outline-primary:hover {
-  background-color: var(--primary) !important;
+  background-color: $primary !important;
   color: #fff !important;
 }
 
 .btn-success {
-  background-color: var(--green) !important;
-  border-color: #4aab4e !important;
+  background-color: $green !important;
+  border-color: $btn-success-border !important;
 }
 
 .btn-success:hover {
-  background-color: #3d8b40 !important;
+  background-color: $btn-success-hover !important;
 }
 
 .btn-outline-success {
-  border-color: var(--green) !important;
-  color: var(--green) !important;
+  border-color: $green !important;
+  color: $green !important;
 }
 
 .btn-success.active {
-  background-color: #3d8b40 !important;
+  background-color: $btn-success-hover !important;
 }
 
 .btn-outline-success:hover {
-  background-color: var(--green) !important;
+  background-color: $green !important;
   color: #fff !important;
 }
 
 .text-info {
-  color: var(--skyblue) !important;
+  color: $skyblue !important;
 }
 
 .text-danger {
-  color: var(--red) !important;
+  color: $red !important;
 }
 
 .form-control {
   font-size: 14px;
   border: none;
-  border-bottom: 1px solid #e4e4e4;
+  border-bottom: 1px solid $dashboard-bg;
   border-radius: 0;
 }
 
 .form-control:focus {
-  border-bottom: 2px solid #1976d2;
+  border-bottom: 2px solid $form-focus-border;
   box-shadow: none;
 }
 
@@ -141,19 +137,19 @@
 }
 
 .input-group-text {
-  background-color: #eee;
+  background-color: $input-group-bg;
   border-radius: 0;
 }
 
 .form-select {
   font-size: 14px;
   border: none;
-  border-bottom: 1px solid #e4e4e4;
+  border-bottom: 1px solid $dashboard-bg;
   border-radius: 0;
 }
 
 .form-select:focus {
-  border-bottom: 2px solid #1976d2;
+  border-bottom: 2px solid $form-focus-border;
   box-shadow: none;
 }
 
@@ -162,9 +158,6 @@
   padding: 10px 22px;
   vertical-align: middle;
 }
-
-
-
 
 .btn-default {
   color: $light-font;
@@ -218,50 +211,14 @@
 
 .invoice-table th {
   border: 1px solid #fff;
-  background-color: #a2a2a2;
+  background-color: $invoice-header-bg;
   color: #fff !important;
 }
-
 
 .whiteframe {
   box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
     0px 2px 2px 0px rgba(0, 0, 0, 0.14),
     0px 1px 5px 0px rgba(0, 0, 0, 0.12);
-}
-
-
-.datepicker {
-  font-size: 12px;
-  padding: 20px;
-  border: none;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-/* also add some paddings to the days */
-
-.datepicker-days th,
-.datepicker-days td {
-  padding: 5px;
-}
-
-/* make sunday red */
-
-.datepicker-days th:nth-child(1),
-.datepicker-days td:nth-child(1),
-.datepicker-days td.old.day:nth-child(1),
-.datepicker-days td.new.day:nth-child(1) {
-  color: red;
-}
-
-.datepicker th.dow,
-.datepicker th.prev {
-  color: #000 !important;
-}
-
-/* remove the red color for left arrows */
-
-.datepicker-prev {
-  color: #000 !important;
 }
 
 @media screen and (max-width: 768px) {

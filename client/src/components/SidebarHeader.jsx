@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom";
+import logo from "../assets/images/faviconGS.png";
 
 const SidebarHeader = () => {
   return (
     <div className="sidebar-header">
       <div className="logo">
         <Link to="/">
-          <ion-icon name="apps-outline"></ion-icon>
+          <div className="logo-container">
+            <img src={logo} alt="Logo" />
+          </div>
           <span className="logo-text">GalaxySpark</span>
         </Link>
       </div>

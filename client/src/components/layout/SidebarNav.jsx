@@ -129,10 +129,36 @@ const SidebarNav = () => {
             </Link>
             <ul className="inner-drop">
               <li>
-                <Link to="#">All Projects</Link>
+                <Link to="/projects">All Projects</Link>
               </li>
               <li>
                 <Link to="/projects/create">+ New Project</Link>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <Link
+              to="#"
+              className={`inner-toggle ${openIndex === 4 ? "open" : ""}`}
+              onClick={() => handleDropdown(4)} // Handle click for the second dropdown
+            >
+              <div className="icon-container">
+                <ion-icon name="people-outline"></ion-icon>
+              </div>
+              <span>Team</span>
+              <i
+                className={`fa-solid fa-chevron-left toggle-icon ${
+                  openIndex === 4 ? "rotate" : ""
+                }`}
+              ></i>
+            </Link>
+            <ul className="inner-drop">
+              <li>
+                <Link to="#">All Team Members</Link>
+              </li>
+              <li>
+                <Link to="/team-member/create">+ New Team Member</Link>
               </li>
             </ul>
           </li>
