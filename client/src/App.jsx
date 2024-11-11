@@ -7,6 +7,7 @@ import { Toaster } from "react-hot-toast";
 import CreateNewProject from "./pages/CreateNewProject";
 import { AllProjects } from "./pages/AllProjects";
 import AddTeamMember from "./pages/AddTeamMember";
+import { HelmetProvider } from "react-helmet-async";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -41,10 +42,10 @@ const router = createBrowserRouter([
 
 const App = () => {
       return (
-        <>
+        <HelmetProvider>
           <RouterProvider router={router} />
           <Toaster position="bottom-center" reverseOrder={false} />
-        </>
+        </HelmetProvider>
       );
 };
 
