@@ -8,6 +8,7 @@ import CreateNewProject from "./pages/CreateNewProject";
 import { AllProjects } from "./pages/AllProjects";
 import AddTeamMember from "./pages/AddTeamMember";
 import { HelmetProvider } from "react-helmet-async";
+
 const router = createBrowserRouter([
   {
     path: "/",
