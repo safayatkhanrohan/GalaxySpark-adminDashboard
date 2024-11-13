@@ -14,7 +14,7 @@ const ProjectForm = () => {
 
   const onSubmit = async (data) => {
     try {
-      // Creating FormData instance
+      // Creating FormData
       const formData = new FormData();
       formData.append("name", data.name);
       formData.append("description", data.description);
